@@ -31,16 +31,12 @@ for paragraph in document.paragraphs:
  '''
 for p in doc.paragraphs:
         if 'this researcher identified' in p.text:
-            print 'SEARCH FOUND!!'
-            #font.bold =True
-            font = p.add_run().font
-            font.highlight_color = WD_COLOR_INDEX.YELLOW
-            text = p.text.replace('this researcher identified', 'new text')
-            doc.save('test4.docx')
-            #font.bold = False
-            #style = p.style
-            #p.text = text
-            #p.style = style
+            print('SEARCH FOUND!!')
+            text = p.text.replace('this researcher identified ', 'new text')
+            style = p.style
+            p.text = text
+            p.style = style
     # doc.save(filename)
+doc.save('test3.docx')
             
 #return 1
